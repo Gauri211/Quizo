@@ -41,7 +41,11 @@ export default function Dashboard() {
             <h3 className="text-lg font-semibold">{quiz.title}</h3>
             <p className="text-gray-500">{quiz.description}</p>
             <p className="text-sm text-gray-400 mt-1">
-              Created on: {new Date(quiz.created_at).toLocaleDateString()}
+              Created on: {new Date(quiz.created_at).toLocaleDateString("en-GB", {
+                day: "2-digit",
+                month: "2-digit",
+                year: "numeric"
+              })}
             </p>
             <div className="flex justify-between mt-2">
               <Button onClick={() => setEditingQuiz(quiz)} variant="outline">Edit</Button>
